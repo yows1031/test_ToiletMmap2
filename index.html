@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
     <link rel="stylesheet" href="css/main2.css">
-    <script src="js/mapping/pointData.js"></script>
+    <!-- <script src="js/mapping/pointData.js"></script> -->
+    <script src="js/mapping/testPointData.js"></script>
     <script src="js/mapping/modalData.js"></script>
   </head>
   <body class="container">
@@ -64,7 +65,10 @@
       <table class="hidden" id="modal">
         <tbody>
           <tr class="pointTittle">
-            <th id="thTitle" colspan="9"></th>
+            <!-- <th id="thTitle" colspan="9"></th> -->
+            <td><img src="icon/info.png" id="altInformation"></td>
+            <td id="pointBuild"></td>
+            <td><img onClick="back()"  src="icon/back.png" alt="このボタンで地図に戻ります"></td>
           </tr>
           <tr class="infomation">
             <td class="icon" id="parkingIcon"></td>

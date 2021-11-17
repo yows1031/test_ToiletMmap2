@@ -19,30 +19,100 @@ const buttonSign = document.getElementById('buttonSign');
 const shoewrtoiletIcon = document.getElementById('shoewrtoiletIcon');
 const shoewrtoiletSign = document.getElementById('showertoiletSign');
 const tdTime = document.getElementById('tdTime');
+const pointBuild= document.getElementById('pointBuild');
+const altInformation = document.getElementById('altInformation');
+const imageSet = [];
+const altText = [];
 
-function  setModal(textSet, imageSet) {
-    textSet.forEach((value) => {
-        thTitle.innerHTML = value.title;
-        parkingIcon.innerHTML = value.parking;
-        parkingSign.innerText = value.parkingSign;
-        babybedIcon.innerHTML = value.babybed;
-        babybedSign.innerText = value.babybedSign
-        multisheetIcon.innerHTML = value.multisheet;
-        multisheetSign.innerText = value.multisheetSign
-        ostomateIcon.innerHTML = value.ostomate;
-        ostomateSign.innerText = value.ostomateSign;
-        buttonIcon.innerHTML = value.button;
-        buttonSign.innerText = value.buttonSign
-        shoewrtoiletIcon.innerHTML = value.showertoilet;
-        shoewrtoiletSign.innerText = value.showertoiletSign;
+
+function  setModal(key) {
+
+    console.log(key);
+
+    mask.classList.remove('hidden');
+    modal.classList.remove('hidden');
+
+    resultData = pointData.filter(function(item){
+        return item.name === key;
+    })
+    console.log(resultData);
+
+    resultData.forEach((value) => {
+        
+        // thTitle.innerHTML = '<p><img src="icon/info.png" alt="東洋館です。トイレに近い入り口は、不明です。シャワートイレがあります">' + value.name + '<img onClick="back()"  src="icon/back.png" alt="このボタンで地図に戻ります"></p>'
+        pointBuild.innerText = value.name
         tdTime.innerText = value.tdTime;
+
+        altText.push("こちらは" + value.name + "です。")
+
+        if(value.parking === true){
+            parkingIcon.innerHTML = '<img src="icon/parking.png">';
+            parkingSign.innerText = "あり"
+            altText.push("専用駐車場があります。")
+        }else  if(value.parking === false){
+            parkingIcon.innerHTML = '<img src="icon/parking_ng.png">';
+            parkingSign.innerText = "なし"
+        }
+
+        if(value.babybed === true){
+            babybedIcon.innerHTML = '<img src="icon/babybed.png">';
+            babybedSign.innerText = "あり"
+            altText.push("ベビーベッドがあります。")
+        }else  if(value.parking === false){
+            babybedIcon.innerHTML = '<img src="icon/babybed_ng.png">';
+            babybedSign.innerText = "なし"
+        }
+
+        if(value.multisheet  === true){
+            multisheetIcon.innerHTML = '<img src="icon/multisheet.png">';
+            multisheetSign.innerText = "あり"
+            altText.push("マルチシートがあります。")
+        }else  if(value.multisheet === false){
+            multisheetIcon.innerHTML = '<img src="icon/multisheet_ng.png">';
+            multisheetSign.innerText = "なし"
+        }
+
+        if(value.ostomate === true){
+            ostomateIcon.innerHTML = '<img src="icon/ostomate.png">';
+            ostomateSign.innerText = "あり"
+            altText.push("オストメイトがあります。")
+        }else  if(value.ostomate === false){
+            ostomateIcon.innerHTML = '<img src="icon/ostomate_ng.png">';
+            ostomateSign.innerText = "なし"
+        }
+        
+        if(value.button === true){
+            buttonIcon.innerHTML = '<img src="icon/button.png">';
+            buttonSign.innerText = "あり"
+            altText.push("があります。")
+        }else  if(value.button === false){
+            buttonIcon.innerHTML = '<img src="icon/button_ng.png">';
+            buttonSign.innerText = "なし"
+        }
+        
+        if(value.showertoilet === true){
+            shoewrtoiletIcon.innerHTML = '<img src="icon/showertoilet.png">';
+            shoewrtoiletSign.innerText = "あり"
+            altText.push("シャワートイレがあります。")
+        }else  if(value.showertoilet === false){
+            shoewrtoiletIcon.innerHTML = '<img src="icon/showertoilet_ng.png">';
+            shoewrtoiletSign.innerText = "なし"
+        }
+
+        console.log(altText);
+        altInformation.alt = altText;
+
+        for(let i = 0; i < value.img.length; i++){
+            imageSet.push(value.img[i]);
+        }
+
 
     });
 
     let currentNum = 0;
-
+    
     function setMainImage(imageSet) {
-        target.src = imageSet;
+    target.src = imageSet;
     }
     
     setMainImage(imageSet[currentNum])
@@ -68,6 +138,7 @@ function  setModal(textSet, imageSet) {
             addCurrentClass();
         })
         const img = document.createElement('img');
+        console.log('image', image);
         img.src = image;
         li.appendChild(img);
         thumbnails.appendChild(li);
@@ -98,6 +169,7 @@ function back() {
     mask.classList.add('hidden');
     modal.classList.add('hidden');
     modalArrayRemove();
+    resultData = [];
 }
 
 function modalArrayRemove() {

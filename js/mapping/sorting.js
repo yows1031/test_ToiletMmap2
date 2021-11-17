@@ -82,27 +82,27 @@ function checked() {
     console.log(resultData);
 
     if (parkingCheck.checked) {
-        resultData = resultData.filter(point => point.parking == "true");
+        resultData = resultData.filter(point => point.parking == true);
     }
 
     if(babybedCheck.checked) {
-        resultData = resultData.filter(point => point.babybed == "true");
+        resultData = resultData.filter(point => point.babybed == true);
     }
 
     if (ostomateCheck.checked) {
-       resultData = resultData.filter(point => point.ostomate == "true");
+       resultData = resultData.filter(point => point.ostomate == true);
     }
 
     if (multisheetCheck.checked) {
-        resultData = resultData.filter(point => point.multisheet == "true");
+        resultData = resultData.filter(point => point.multisheet == true);
     }
 
     if (buttonCheck.checked) {
-        resultData = resultData.filter(point => point.button == "true");
+        resultData = resultData.filter(point => point.button == true);
     }
 
     if (showerToiletCheck.checked) {
-        resultData = resultData.filter(point => point.showertoilet == "true");
+        resultData = resultData.filter(point => point.showertoilet == true);
     }
 
     console.log(resultData);

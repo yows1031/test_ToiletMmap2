@@ -66,15 +66,28 @@ const oshikaYoriisoImages = [
 ];
 
 // モーダル情報
+// const oshikaToyoModal = [
+//     {title: '<p><img src="icon/info.png" alt="東洋館です。トイレに近い入り口は、不明です。シャワートイレがあります">東洋館<img onClick="back()"  src="icon/back.png" alt="このボタンで地図に戻ります"></p>',
+//     parking: '<img src="icon/parking_ng.png">',parkingSign:"なし",
+//     babybed: '<img src="icon/babybed_ng.png">',babybedSign:"なし",
+//     multisheet: '<img src="icon/multisheet_ng.png">',multisheetSign:"なし",
+//     ostomate: '<img src="icon/ostomate_ng.png">',ostomateSign:"なし",
+//     button: '<img src="icon/button_ng.png">',buttonSign:"なし",
+//     showertoilet: '<img src="icon/showertoilet.png">',showertoiletSign:"あり",
+//     tdTime:"９：００〜１６：３０　45-2206",
+//     test:"false"}
+// ];
+
 const oshikaToyoModal = [
     {title: '<p><img src="icon/info.png" alt="東洋館です。トイレに近い入り口は、不明です。シャワートイレがあります">東洋館<img onClick="back()"  src="icon/back.png" alt="このボタンで地図に戻ります"></p>',
-    parking: '<img src="icon/parking_ng.png">',parkingSign:"なし",
-    babybed: '<img src="icon/babybed_ng.png">',babybedSign:"なし",
-    multisheet: '<img src="icon/multisheet_ng.png">',multisheetSign:"なし",
-    ostomate: '<img src="icon/ostomate_ng.png">',ostomateSign:"なし",
-    button: '<img src="icon/button_ng.png">',buttonSign:"なし",
-    showertoilet: '<img src="icon/showertoilet.png">',showertoiletSign:"あり",
-    tdTime:"９：００〜１６：３０　45-2206",}
+    parking: "false",
+    babybed: "false",
+    multisheet: "false",
+    ostomate: "false",
+    button: "false",
+    showertoilet: "true",
+    tdTime:"９：００〜１６：３０　45-2206",
+    }
 ];
 
 const oshikaSogoModal = [
