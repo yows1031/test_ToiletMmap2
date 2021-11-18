@@ -1,7 +1,6 @@
 'use strict'
 
 
-
 const pointData = [
 
     {
@@ -13,7 +12,7 @@ const pointData = [
     button:false,
     showertoilet:true,
     lat:38.302116,lon:141.509742,
-    popupContent:'<div class="popButton" onClick="setModal("東洋館");"><p>東洋館</p></div>',
+    popupContent:'<div class="popButton" onClick="setModal("東洋館")"><p>東洋館</p></div>',
     tdTime:"利用可能時間 9:00-16:30　電話 0225−45-2206",
     img:[
     'img/pic/oshika/toyo/toyo1.png',
@@ -26,6 +25,31 @@ const pointData = [
 
 // 質問
 // popupContentで、viewされるボタンの仲に、modalBack.jsのfunction setModalに引数を書いています
-// しかし、この書き方をすると「Uncaught SyntaxError: Unexpected end of inpu」というエラーが出ます。
+// しかし、この書き方をすると「Uncaught SyntaxError: Unexpected end of input」というエラーが出ます。
 // chromeのデベロッパーツールのelementsを見ると謎の空白も入って言います。
 // 調べて見たのですが、分かりませんでした。教えていただけないでしょうか？
+
+// こんな書き方はどうでしょうか？
+const toyo = "東洋館"
+
+const pointData = [
+
+    {
+    name:toyo,
+    parking:true,
+    babybed:false,
+    multisheet:false,
+    ostomate:false,
+    button:false,
+    showertoilet:true,
+    lat:38.302116,lon:141.509742,
+    popupContent:'<div class="popButton" onClick="setModal(toyo)"><p>東洋館</p></div>',
+    tdTime:"利用可能時間 9:00-16:30　電話 0225−45-2206",
+    img:[
+    'img/pic/oshika/toyo/toyo1.png',
+    'img/pic/oshika/toyo/toyo2.png',
+    'img/pic/oshika/toyo/toyo3.png',
+    'img/pic/oshika/toyo/toyo4.png',
+    'img/pic/oshika/toyo/toyo5.png',],
+    },
+];
